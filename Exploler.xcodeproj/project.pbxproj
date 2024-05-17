@@ -16,6 +16,7 @@
 		7A2ABCDF2BF748130054A604 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABCDE2BF748130054A604 /* Font.swift */; };
 		7A2ABCE12BF74B090054A604 /* TossFaceFontMac.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A2ABCE02BF74B090054A604 /* TossFaceFontMac.ttf */; };
 		7A2ABCE42BF74F3F0054A604 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABCE32BF74F3F0054A604 /* FlowLayout.swift */; };
+		7A2ABCE62BF798AB0054A604 /* FlexableScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABCE52BF798AB0054A604 /* FlexableScrollView.swift */; };
 		7AF0A27C2BF6F32A0068CB48 /* ExplolerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0A27B2BF6F32A0068CB48 /* ExplolerApp.swift */; };
 		7AF0A27E2BF6F32A0068CB48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0A27D2BF6F32A0068CB48 /* ContentView.swift */; };
 		7AF0A2802BF6F32B0068CB48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AF0A27F2BF6F32B0068CB48 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		7A2ABCDE2BF748130054A604 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		7A2ABCE02BF74B090054A604 /* TossFaceFontMac.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TossFaceFontMac.ttf; sourceTree = "<group>"; };
 		7A2ABCE32BF74F3F0054A604 /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
+		7A2ABCE52BF798AB0054A604 /* FlexableScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexableScrollView.swift; sourceTree = "<group>"; };
 		7AF0A2782BF6F32A0068CB48 /* Exploler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exploler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF0A27B2BF6F32A0068CB48 /* ExplolerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplolerApp.swift; sourceTree = "<group>"; };
 		7AF0A27D2BF6F32A0068CB48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				7A2ABCE32BF74F3F0054A604 /* FlowLayout.swift */,
+				7A2ABCE52BF798AB0054A604 /* FlexableScrollView.swift */,
 			);
 			path = Layout;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A2ABCE62BF798AB0054A604 /* FlexableScrollView.swift in Sources */,
 				7AF0A27E2BF6F32A0068CB48 /* ContentView.swift in Sources */,
 				7A2ABCE42BF74F3F0054A604 /* FlowLayout.swift in Sources */,
 				7A2ABCD72BF744100054A604 /* ButtonColor.swift in Sources */,
