@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A2ABCD12BF742CA0054A604 /* FontColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABCD02BF742CA0054A604 /* FontColor.swift */; };
+		7A2ABCD32BF7434A0054A604 /* ChipColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABCD22BF7434A0054A604 /* ChipColor.swift */; };
+		7A2ABCD52BF743E70054A604 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABCD42BF743E70054A604 /* ThemeColor.swift */; };
+		7A2ABCD72BF744100054A604 /* ButtonColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABCD62BF744100054A604 /* ButtonColor.swift */; };
 		7AF0A27C2BF6F32A0068CB48 /* ExplolerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0A27B2BF6F32A0068CB48 /* ExplolerApp.swift */; };
 		7AF0A27E2BF6F32A0068CB48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0A27D2BF6F32A0068CB48 /* ContentView.swift */; };
 		7AF0A2802BF6F32B0068CB48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AF0A27F2BF6F32B0068CB48 /* Assets.xcassets */; };
@@ -14,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A2ABCD02BF742CA0054A604 /* FontColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontColor.swift; sourceTree = "<group>"; };
+		7A2ABCD22BF7434A0054A604 /* ChipColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipColor.swift; sourceTree = "<group>"; };
+		7A2ABCD42BF743E70054A604 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
+		7A2ABCD62BF744100054A604 /* ButtonColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonColor.swift; sourceTree = "<group>"; };
 		7AF0A2782BF6F32A0068CB48 /* Exploler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exploler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF0A27B2BF6F32A0068CB48 /* ExplolerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplolerApp.swift; sourceTree = "<group>"; };
 		7AF0A27D2BF6F32A0068CB48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +40,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A2ABCCE2BF742A30054A604 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				7A2ABCCF2BF742B70054A604 /* Color */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		7A2ABCCF2BF742B70054A604 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				7A2ABCD42BF743E70054A604 /* ThemeColor.swift */,
+				7A2ABCD02BF742CA0054A604 /* FontColor.swift */,
+				7A2ABCD62BF744100054A604 /* ButtonColor.swift */,
+				7A2ABCD22BF7434A0054A604 /* ChipColor.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
 		7AF0A26F2BF6F32A0068CB48 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +78,7 @@
 		7AF0A27A2BF6F32A0068CB48 /* Exploler */ = {
 			isa = PBXGroup;
 			children = (
+				7A2ABCCE2BF742A30054A604 /* Component */,
 				7AF0A27B2BF6F32A0068CB48 /* ExplolerApp.swift */,
 				7AF0A27D2BF6F32A0068CB48 /* ContentView.swift */,
 				7AF0A27F2BF6F32B0068CB48 /* Assets.xcassets */,
@@ -138,7 +166,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AF0A27E2BF6F32A0068CB48 /* ContentView.swift in Sources */,
+				7A2ABCD72BF744100054A604 /* ButtonColor.swift in Sources */,
+				7A2ABCD32BF7434A0054A604 /* ChipColor.swift in Sources */,
 				7AF0A27C2BF6F32A0068CB48 /* ExplolerApp.swift in Sources */,
+				7A2ABCD12BF742CA0054A604 /* FontColor.swift in Sources */,
+				7A2ABCD52BF743E70054A604 /* ThemeColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
