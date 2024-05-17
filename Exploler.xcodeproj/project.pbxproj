@@ -11,6 +11,10 @@
 		7A2ABCD32BF7434A0054A604 /* ChipColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABCD22BF7434A0054A604 /* ChipColor.swift */; };
 		7A2ABCD52BF743E70054A604 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABCD42BF743E70054A604 /* ThemeColor.swift */; };
 		7A2ABCD72BF744100054A604 /* ButtonColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABCD62BF744100054A604 /* ButtonColor.swift */; };
+		7A2ABCDB2BF747BE0054A604 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A2ABCD92BF747BE0054A604 /* Pretendard-SemiBold.otf */; };
+		7A2ABCDC2BF747BE0054A604 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A2ABCDA2BF747BE0054A604 /* Pretendard-Bold.otf */; };
+		7A2ABCDF2BF748130054A604 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABCDE2BF748130054A604 /* Font.swift */; };
+		7A2ABCE12BF74B090054A604 /* TossFaceFontMac.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A2ABCE02BF74B090054A604 /* TossFaceFontMac.ttf */; };
 		7AF0A27C2BF6F32A0068CB48 /* ExplolerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0A27B2BF6F32A0068CB48 /* ExplolerApp.swift */; };
 		7AF0A27E2BF6F32A0068CB48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0A27D2BF6F32A0068CB48 /* ContentView.swift */; };
 		7AF0A2802BF6F32B0068CB48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AF0A27F2BF6F32B0068CB48 /* Assets.xcassets */; };
@@ -22,6 +26,11 @@
 		7A2ABCD22BF7434A0054A604 /* ChipColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChipColor.swift; sourceTree = "<group>"; };
 		7A2ABCD42BF743E70054A604 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
 		7A2ABCD62BF744100054A604 /* ButtonColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonColor.swift; sourceTree = "<group>"; };
+		7A2ABCD92BF747BE0054A604 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		7A2ABCDA2BF747BE0054A604 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		7A2ABCDD2BF747F70054A604 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7A2ABCDE2BF748130054A604 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		7A2ABCE02BF74B090054A604 /* TossFaceFontMac.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TossFaceFontMac.ttf; sourceTree = "<group>"; };
 		7AF0A2782BF6F32A0068CB48 /* Exploler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exploler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF0A27B2BF6F32A0068CB48 /* ExplolerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplolerApp.swift; sourceTree = "<group>"; };
 		7AF0A27D2BF6F32A0068CB48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,6 +52,7 @@
 		7A2ABCCE2BF742A30054A604 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				7A2ABCD82BF7474E0054A604 /* Font */,
 				7A2ABCCF2BF742B70054A604 /* Color */,
 			);
 			path = Component;
@@ -57,6 +67,17 @@
 				7A2ABCD22BF7434A0054A604 /* ChipColor.swift */,
 			);
 			path = Color;
+			sourceTree = "<group>";
+		};
+		7A2ABCD82BF7474E0054A604 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				7A2ABCE02BF74B090054A604 /* TossFaceFontMac.ttf */,
+				7A2ABCDA2BF747BE0054A604 /* Pretendard-Bold.otf */,
+				7A2ABCD92BF747BE0054A604 /* Pretendard-SemiBold.otf */,
+				7A2ABCDE2BF748130054A604 /* Font.swift */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		7AF0A26F2BF6F32A0068CB48 = {
@@ -78,6 +99,7 @@
 		7AF0A27A2BF6F32A0068CB48 /* Exploler */ = {
 			isa = PBXGroup;
 			children = (
+				7A2ABCDD2BF747F70054A604 /* Info.plist */,
 				7A2ABCCE2BF742A30054A604 /* Component */,
 				7AF0A27B2BF6F32A0068CB48 /* ExplolerApp.swift */,
 				7AF0A27D2BF6F32A0068CB48 /* ContentView.swift */,
@@ -153,6 +175,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A2ABCDB2BF747BE0054A604 /* Pretendard-SemiBold.otf in Resources */,
+				7A2ABCDC2BF747BE0054A604 /* Pretendard-Bold.otf in Resources */,
+				7A2ABCE12BF74B090054A604 /* TossFaceFontMac.ttf in Resources */,
 				7AF0A2832BF6F32B0068CB48 /* Preview Assets.xcassets in Resources */,
 				7AF0A2802BF6F32B0068CB48 /* Assets.xcassets in Resources */,
 			);
@@ -167,6 +192,7 @@
 			files = (
 				7AF0A27E2BF6F32A0068CB48 /* ContentView.swift in Sources */,
 				7A2ABCD72BF744100054A604 /* ButtonColor.swift in Sources */,
+				7A2ABCDF2BF748130054A604 /* Font.swift in Sources */,
 				7A2ABCD32BF7434A0054A604 /* ChipColor.swift in Sources */,
 				7AF0A27C2BF6F32A0068CB48 /* ExplolerApp.swift in Sources */,
 				7A2ABCD12BF742CA0054A604 /* FontColor.swift in Sources */,
@@ -307,6 +333,7 @@
 				DEVELOPMENT_TEAM = 88DQM3PTQR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Exploler/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -336,6 +363,7 @@
 				DEVELOPMENT_TEAM = 88DQM3PTQR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Exploler/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
