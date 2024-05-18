@@ -32,7 +32,10 @@ struct ContentView: View {
         .sheet(item: $sheet.current) { current in
             switch current {
             case .plantDetail(let id):
-                Text(id.uuidString)
+               PlantDetail()
+                    .presentationDetents([.height(400)])
+                    .presentationDragIndicator(.visible)
+                    .presentationCornerRadius(15)
             case .plantEditor:
                 PlantEditor()
                     .presentationDetents([.fraction(0.7)])

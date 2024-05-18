@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct MyPlantCell: View {
+struct PlantCell: View {
+    @Environment(SheetViewModel.self) private var sheet
     
     @ViewBuilder
     private var plantInfo: some View {
@@ -34,7 +35,7 @@ struct MyPlantCell: View {
     }
     
     var body: some View {
-        Button(action: {}) {
+        Button(action: { sheet.current = .plantDetail(UUID()) }) {
             ViewThatFits(in: .vertical) {
                 ZStack(alignment: .bottomLeading) {
                     GeometryReader { proxy in
