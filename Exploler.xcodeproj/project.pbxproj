@@ -52,6 +52,7 @@
 		7A82FD0B2BF8F56A0055EECE /* PlantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FD0A2BF8F56A0055EECE /* PlantModel.swift */; };
 		7A82FD132BF8FD3E0055EECE /* ExplolerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FD122BF8FD3E0055EECE /* ExplolerTests.swift */; };
 		7A82FD1A2BF8FD4F0055EECE /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FD192BF8FD4F0055EECE /* NetworkTests.swift */; };
+		7ACFDD672BF905BC00CEB36B /* PlantLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACFDD662BF905BC00CEB36B /* PlantLoader.swift */; };
 		7AF0A27C2BF6F32A0068CB48 /* ExplolerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0A27B2BF6F32A0068CB48 /* ExplolerApp.swift */; };
 		7AF0A27E2BF6F32A0068CB48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0A27D2BF6F32A0068CB48 /* ContentView.swift */; };
 		7AF0A2802BF6F32B0068CB48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AF0A27F2BF6F32B0068CB48 /* Assets.xcassets */; };
@@ -115,6 +116,7 @@
 		7A82FD102BF8FD3E0055EECE /* ExplolerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExplolerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A82FD122BF8FD3E0055EECE /* ExplolerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplolerTests.swift; sourceTree = "<group>"; };
 		7A82FD192BF8FD4F0055EECE /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		7ACFDD662BF905BC00CEB36B /* PlantLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantLoader.swift; sourceTree = "<group>"; };
 		7AF0A2782BF6F32A0068CB48 /* Exploler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exploler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF0A27B2BF6F32A0068CB48 /* ExplolerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplolerApp.swift; sourceTree = "<group>"; };
 		7AF0A27D2BF6F32A0068CB48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 		7A82FD082BF8F4E90055EECE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				7ACFDD652BF9057C00CEB36B /* Network */,
 				7A82FD092BF8F4F30055EECE /* Model */,
 			);
 			path = Core;
@@ -316,6 +319,14 @@
 				7A82FD192BF8FD4F0055EECE /* NetworkTests.swift */,
 			);
 			path = ExplolerTests;
+			sourceTree = "<group>";
+		};
+		7ACFDD652BF9057C00CEB36B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7ACFDD662BF905BC00CEB36B /* PlantLoader.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		7AF0A26F2BF6F32A0068CB48 = {
@@ -497,6 +508,7 @@
 				7A2ABCD72BF744100054A604 /* ButtonColor.swift in Sources */,
 				7A2ABD022BF832E90054A604 /* ChipButtonStyle.swift in Sources */,
 				7A2ABCF62BF82F780054A604 /* PrimaryButtonStyle.swift in Sources */,
+				7ACFDD672BF905BC00CEB36B /* PlantLoader.swift in Sources */,
 				7A2ABCFD2BF830E20054A604 /* AccentTextFieldStyle.swift in Sources */,
 				7A82FCF42BF8DB640055EECE /* NearPlantsHeader.swift in Sources */,
 				7A2ABD112BF88A5B0054A604 /* PlantEditor.swift in Sources */,
