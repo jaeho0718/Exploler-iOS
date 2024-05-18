@@ -26,7 +26,7 @@ struct MyPlantsSection: View {
                 if plants.isEmpty {
                     EmptyMyPlants()
                 } else {
-                    ForEach(plants.prefix(4)) { plant in
+                    ForEach(plants.prefix(3)) { plant in
                         PlantCell(plant: plant)
                             .layoutPriority(1)
                     }

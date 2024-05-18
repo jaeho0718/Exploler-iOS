@@ -78,6 +78,7 @@ struct PlantCell: View {
                     if showImage {
                         plantImage
                             .frame(width: 55)
+                            .contentShape(Rectangle())
                             .clipped()
                     }
                     plantInfo
