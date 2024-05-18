@@ -30,6 +30,7 @@ struct NearPlantCell: View {
                     .foregroundStyle(.secondary)
                 }
             }
+            .foregroundStyle(Color.Font.title)
             .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         }

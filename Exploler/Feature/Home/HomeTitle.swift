@@ -15,6 +15,7 @@ struct HomeTitle: View {
             HStack {
                 Text("내가 찾은 식물")
                     .font(.Pretendard.title)
+                    .foregroundStyle(Color.Font.title)
                 Text("🍀")
                     .font(.tossIcon(size: 24))
             }
@@ -23,6 +24,7 @@ struct HomeTitle: View {
                 Text("건")
             }
             .font(.Pretendard.largeTitle)
+            .foregroundStyle(Color.Font.title)
         }
     }
 }
