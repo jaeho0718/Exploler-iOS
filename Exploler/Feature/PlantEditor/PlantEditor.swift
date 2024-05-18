@@ -70,9 +70,9 @@ struct PlantEditor: View {
                     Text(title)
                         .font(.Pretendard.body)
                         .accentTextFieldStyle(
-                            color: Color(uiColor: plantAnalyzer.colors?.detail ?? .unselected)
+                            color: Color(uiColor: plantAnalyzer.colors?.primary ?? .unselected)
                         )
-                        .animation(.easeInOut, value: plantAnalyzer.colors?.detail)
+                        .animation(.easeInOut, value: plantAnalyzer.colors?.primary)
                     
                     Text(plantAnalyzer.locationStr.isEmpty ? 
                          "📍위치정보를 찾을 수 없습니다."
@@ -133,7 +133,7 @@ struct PlantEditor: View {
             onSaving = true
             let temp = PlantModel(
                 name: name,
-                infomation: "",
+                infomation: plantAnalyzer.plantInfo?.description ?? "",
                 location: .init(
                     latitude: location.coordinate.latitude,
                     longitude: location.coordinate.longitude

@@ -10,7 +10,7 @@ import SwiftData
 
 struct Home: View {
     @Environment(NearPlantsViewModel.self) private var nearPlants
-    @Query(sort: [SortDescriptor(\PlantModel.createdAt)])
+    @Query(sort: [SortDescriptor(\PlantModel.createdAt, order: .reverse)])
     private var userPlants: [PlantModel]
     var mainSpace: Namespace.ID
     

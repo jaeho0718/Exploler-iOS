@@ -22,7 +22,7 @@ struct PlantInfoBlock: View {
                     .font(.Pretendard.title)
                 Text(infomation)
                     .font(.Pretendard.body)
-                    .lineLimit(3)
+                    .lineLimit(extend ? nil : 3)
             }
             .foregroundStyle(Color.Font.overlay)
             .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
