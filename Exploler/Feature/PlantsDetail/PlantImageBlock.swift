@@ -8,20 +8,27 @@
 import SwiftUI
 
 struct PlantImageBlock: View {
+    var imageData: Data?
+    var imageURL: String?
+    
     var body: some View {
-        ZStack(alignment: .bottomLeading) {
-            Image(.flowerSample)
+        if let imageData,
+           let uiImage = UIImage(data: imageData) {
+            Image(uiImage: uiImage)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(height: 200)
-            HStack {
-                PlantLabelChip()
-                PlantLabelChip()
+                .clipShape(RoundedRectangle(cornerRadius: 15))
+        } else if let imageURL,
+                  let url = URL(string: imageURL) {
+            AsyncImage(url: url) { phase in
+                phase.image?.resizable().aspectRatio(contentMode: .fill)
             }
-            .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+            .frame(height: 200)
+            .clipShape(RoundedRectangle(cornerRadius: 15))
+        } else {
+            EmptyView()
         }
-        .frame(height: 200)
-        .clipShape(RoundedRectangle(cornerRadius: 15))
     }
 }
 

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PlantLocationBlock: View {
+    var location: String
+    
     var body: some View {
         ZStack(alignment: .center) {
             Rectangle()
@@ -15,7 +17,7 @@ struct PlantLocationBlock: View {
             HStack(spacing: 8) {
                 Text("📍")
                     .font(.tossIcon(size: 20))
-                Text("서울시 흑석동")
+                Text(location)
                     .font(.Pretendard.body)
             }
             .foregroundStyle(Color.Font.overlay)
@@ -26,5 +28,5 @@ struct PlantLocationBlock: View {
 }
 
 #Preview {
-    PlantLocationBlock()
+    PlantLocationBlock(location: "서울시 흑석동")
 }

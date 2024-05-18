@@ -32,8 +32,8 @@ struct ContentView: View {
         }
         .sheet(item: $sheet.current) { current in
             switch current {
-            case .plantDetail(let id):
-               PlantDetail()
+            case .plantDetail(let plant):
+               PlantDetail(plant: plant)
                     .presentationDetents([.height(400)])
                     .presentationDragIndicator(.visible)
                     .presentationCornerRadius(15)

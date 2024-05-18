@@ -57,7 +57,7 @@ struct PlantCell: View {
     }
     
     var body: some View {
-        Button(action: { sheet.current = .plantDetail(UUID()) }) {
+        Button(action: { sheet.current = .plantDetail(plant) }) {
             ViewThatFits(in: .vertical) {
                 ZStack(alignment: .bottomLeading) {
                     GeometryReader { proxy in

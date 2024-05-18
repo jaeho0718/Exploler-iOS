@@ -9,14 +9,14 @@ import Foundation
 
 enum Sheet: Identifiable {
     case plantEditor
-    case plantDetail(UUID)
+    case plantDetail(PlantModel)
     
     var id: String {
         switch self {
         case .plantEditor:
             return "editor"
-        case .plantDetail(let id):
-            return id.uuidString
+        case .plantDetail(let plant):
+            return plant.plantID
         }
     }
 }

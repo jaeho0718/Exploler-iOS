@@ -9,17 +9,22 @@ import SwiftUI
 
 struct PlantDetail: View {
     @State private var extendInfo = false
+    var plant: PlantModel
     
     var body: some View {
         VStack {
-            PlantImageBlock()
+            PlantImageBlock(imageData: plant.imageData, imageURL: plant.imageURL)
             FlowLayout(primary: .leading) {
-                PlantInfoBlock(extend: $extendInfo)
+                PlantInfoBlock(
+                    extend: $extendInfo,
+                    name: plant.name,
+                    infomation: plant.infomation
+                )
                     .layoutPriority(1)
                 if !extendInfo {
-                    PlantLocationBlock()
+                    PlantLocationBlock(location: plant.locationStr)
                         .layoutPriority(1)
-                    PlantDateBlock()
+                    PlantDateBlock(date: plant.createdAt)
                         .layoutPriority(1)
                 }
             }
@@ -27,8 +32,4 @@ struct PlantDetail: View {
         }
         .padding(EdgeInsets(top: 5, leading: 18, bottom: 10, trailing: 15))
     }
-}
-
-#Preview {
-    PlantDetail()
 }
