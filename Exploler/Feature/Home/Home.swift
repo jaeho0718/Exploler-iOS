@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Home: View {
+    var mainSpace: Namespace.ID
+    
     var body: some View {
         ScrollView(.vertical) {
             LazyVStack(alignment: .leading, spacing: 35) {
@@ -15,7 +17,7 @@ struct Home: View {
                 
                 NearPlantsSection()
                 
-                MyPlantsSection()
+                MyPlantsSection(mainSpace: mainSpace)
             }
         }
         .contentMargins(.horizontal, 18, for: .scrollContent)
@@ -36,5 +38,5 @@ struct Home: View {
 }
 
 #Preview {
-    Home()
+    ContentView()
 }

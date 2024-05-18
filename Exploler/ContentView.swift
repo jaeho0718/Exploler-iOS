@@ -8,8 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Namespace private var mainSpace
+    @State private var page = PageViewModel()
+    
     var body: some View {
-        Home()
+        ZStack {
+            Home(mainSpace: mainSpace)
+                .opacity(page.current != nil ? 0 : 1)
+            switch page.current {
+            case .myPlants:
+                MyPlants(mainSpace: mainSpace)
+                    .matchedGeometryEffect(
+                        id: "MyPlants",
+                        in: mainSpace
+                    )
+            case .nearPlants:
+                Text("HelloWorld")
+            case .none:
+                EmptyView()
+            }
+        }
+        .environment(page)
     }
 }
 

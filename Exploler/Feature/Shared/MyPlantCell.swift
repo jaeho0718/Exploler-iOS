@@ -65,7 +65,3 @@ struct MyPlantCell: View {
         .buttonStyle(ContentButtonStyle())
     }
 }
-
-#Preview {
-    MyPlantsSection()
-}

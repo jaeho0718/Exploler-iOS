@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct MyPlantsSection: View {
+    @Environment(PageViewModel.self) private var page
+    var mainSpace: Namespace.ID
+    
     var body: some View {
-        HomeSection(icon: "🪴", header: "내가 수집한 식물", moreAction: {}) {
+        HomeSection(
+            icon: "🪴",
+            header: "내가 수집한 식물",
+            moreAction: {
+                withAnimation {
+                    page.current = .myPlants
+                }
+            }
+        ) {
             FlowLayout(primary: .trailing) {
                 MyPlantCell()
                     .layoutPriority(1)
@@ -22,9 +33,6 @@ struct MyPlantsSection: View {
             }
             .frame(height: 200)
         }
+        .matchedGeometryEffect(id: "MyPlants", in: mainSpace)
     }
-}
-
-#Preview {
-    MyPlantsSection()
 }
