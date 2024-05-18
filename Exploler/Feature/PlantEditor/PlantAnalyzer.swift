@@ -33,12 +33,10 @@ class PlantImageAnalyzer {
     private func loadImageData() async throws {
         guard let item = selectedPhoto else { throw PlantAnalyzerError.loadPlantPhotoFailed }
         do {
-            guard let data = try await item.loadTransferable(type: Data.self),
-                  let uiImage = UIImage(data: data),
-                  let compressedData = uiImage.jpegData(compressionQuality: 0.6) else {
+            guard let data = try await item.loadTransferable(type: Data.self) else {
                 throw PlantAnalyzerError.loadPlantPhotoFailed
             }
-            self.plantImgData = compressedData
+            self.plantImgData = data
         } catch {
             throw PlantAnalyzerError.loadPlantPhotoFailed
         }
