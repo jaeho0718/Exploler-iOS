@@ -48,6 +48,7 @@ struct Home: View {
                     }
             }
         }
+        .animation(.easeInOut, value: nearPlants.recommendedPlant)
         .contentMargins(.horizontal, 18, for: .scrollContent)
         .contentMargins(.top, 15, for: .scrollContent)
         .background(Color.Theme.surface)
