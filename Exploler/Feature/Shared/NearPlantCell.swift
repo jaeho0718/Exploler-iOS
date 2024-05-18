@@ -37,7 +37,3 @@ struct NearPlantCell: View {
         .buttonStyle(ContentButtonStyle())
     }
 }
-
-#Preview {
-    NearPlantsSection()
-}

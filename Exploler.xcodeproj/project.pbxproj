@@ -39,6 +39,8 @@
 		7A82FCEB2BF8CF340055EECE /* MyPlants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FCEA2BF8CF340055EECE /* MyPlants.swift */; };
 		7A82FCED2BF8D02F0055EECE /* MyPlantsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FCEC2BF8D02F0055EECE /* MyPlantsHeader.swift */; };
 		7A82FCEF2BF8D4CC0055EECE /* PageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FCEE2BF8D4CC0055EECE /* PageViewModel.swift */; };
+		7A82FCF22BF8DB180055EECE /* NearPlants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FCF12BF8DB180055EECE /* NearPlants.swift */; };
+		7A82FCF42BF8DB640055EECE /* NearPlantsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FCF32BF8DB640055EECE /* NearPlantsHeader.swift */; };
 		7AF0A27C2BF6F32A0068CB48 /* ExplolerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0A27B2BF6F32A0068CB48 /* ExplolerApp.swift */; };
 		7AF0A27E2BF6F32A0068CB48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0A27D2BF6F32A0068CB48 /* ContentView.swift */; };
 		7AF0A2802BF6F32B0068CB48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AF0A27F2BF6F32B0068CB48 /* Assets.xcassets */; };
@@ -78,6 +80,8 @@
 		7A82FCEA2BF8CF340055EECE /* MyPlants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlants.swift; sourceTree = "<group>"; };
 		7A82FCEC2BF8D02F0055EECE /* MyPlantsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsHeader.swift; sourceTree = "<group>"; };
 		7A82FCEE2BF8D4CC0055EECE /* PageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewModel.swift; sourceTree = "<group>"; };
+		7A82FCF12BF8DB180055EECE /* NearPlants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearPlants.swift; sourceTree = "<group>"; };
+		7A82FCF32BF8DB640055EECE /* NearPlantsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearPlantsHeader.swift; sourceTree = "<group>"; };
 		7AF0A2782BF6F32A0068CB48 /* Exploler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exploler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF0A27B2BF6F32A0068CB48 /* ExplolerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplolerApp.swift; sourceTree = "<group>"; };
 		7AF0A27D2BF6F32A0068CB48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				7A82FCE22BF8C3490055EECE /* Shared */,
+				7A82FCF02BF8DB060055EECE /* NearPlants */,
 				7A82FCE92BF8CF2C0055EECE /* MyPlants */,
 				7A82FCD72BF8AA7B0055EECE /* Home */,
 				7A2ABD042BF85F3B0054A604 /* PlantEditor */,
@@ -221,6 +226,15 @@
 				7A82FCEC2BF8D02F0055EECE /* MyPlantsHeader.swift */,
 			);
 			path = MyPlants;
+			sourceTree = "<group>";
+		};
+		7A82FCF02BF8DB060055EECE /* NearPlants */ = {
+			isa = PBXGroup;
+			children = (
+				7A82FCF12BF8DB180055EECE /* NearPlants.swift */,
+				7A82FCF32BF8DB640055EECE /* NearPlantsHeader.swift */,
+			);
+			path = NearPlants;
 			sourceTree = "<group>";
 		};
 		7AF0A26F2BF6F32A0068CB48 = {
@@ -351,12 +365,14 @@
 				7A2ABD0A2BF8648D0054A604 /* KeyboardDatePicker.swift in Sources */,
 				7A2ABD062BF85F510054A604 /* PlantAnalyzer.swift in Sources */,
 				7A2ABCE42BF74F3F0054A604 /* FlowLayout.swift in Sources */,
+				7A82FCF22BF8DB180055EECE /* NearPlants.swift in Sources */,
 				7A82FCED2BF8D02F0055EECE /* MyPlantsHeader.swift in Sources */,
 				7A82FCDB2BF8AB380055EECE /* HomeTitle.swift in Sources */,
 				7A2ABCD72BF744100054A604 /* ButtonColor.swift in Sources */,
 				7A2ABD022BF832E90054A604 /* ChipButtonStyle.swift in Sources */,
 				7A2ABCF62BF82F780054A604 /* PrimaryButtonStyle.swift in Sources */,
 				7A2ABCFD2BF830E20054A604 /* AccentTextFieldStyle.swift in Sources */,
+				7A82FCF42BF8DB640055EECE /* NearPlantsHeader.swift in Sources */,
 				7A2ABD112BF88A5B0054A604 /* PlantEditor.swift in Sources */,
 				7A2ABCDF2BF748130054A604 /* Font.swift in Sources */,
 				7A2ABCD32BF7434A0054A604 /* ChipColor.swift in Sources */,

@@ -17,13 +17,13 @@ struct ContentView: View {
                 .opacity(page.current != nil ? 0 : 1)
             switch page.current {
             case .myPlants:
-                MyPlants(mainSpace: mainSpace)
+                MyPlants()
                     .matchedGeometryEffect(
                         id: "MyPlants",
                         in: mainSpace
                     )
             case .nearPlants:
-                Text("HelloWorld")
+                NearPlants(mainSpace: mainSpace)
             case .none:
                 EmptyView()
             }
