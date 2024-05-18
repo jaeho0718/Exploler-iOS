@@ -85,7 +85,7 @@ class PlantModel: Codable {
         try container.encode(locationStr, forKey: .location)
         try container.encode(String(location.latitude), forKey: .latitude)
         try container.encode(String(location.longitude), forKey: .longitude)
-        // 이미지 처리하기
+        try container.encode(imageURL ?? "", forKey: .imageUrl)
     }
 }
 

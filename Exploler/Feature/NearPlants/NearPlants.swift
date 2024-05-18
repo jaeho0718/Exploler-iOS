@@ -33,6 +33,9 @@ struct NearPlants: View {
             }
         }
         .background(Color.Theme.surface)
+        .refreshable {
+            await nearPlants.fetchNearPlants()
+        }
     }
 }
 

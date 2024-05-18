@@ -17,6 +17,7 @@ class NearPlantsViewModel: NSObject, CLLocationManagerDelegate {
     var location: CLLocation?
     var plants: [PlantModel] = []
     var recommendedPlant: PlantModel?
+    private var onFetch = false
     private var updateTime: Date?
     private let minimumUpdateTime: TimeInterval = 60
     
@@ -44,7 +45,6 @@ class NearPlantsViewModel: NSObject, CLLocationManagerDelegate {
             self?.location = location
         }
         loadLocationStr(location: location)
-        fetchNearPlants(location: location)
         updateTime = Date.now
     }
     
@@ -60,17 +60,27 @@ class NearPlantsViewModel: NSObject, CLLocationManagerDelegate {
                     DispatchQueue.main.async { [weak self] in
                         self?.locationStr = subLocal
                         self?.detailLocationStr = "\(local) \(subLocal)"
+                        self?.fetchNearPlantsOnInternal()
                     }
                 }
             }
         )
     }
     
-    private func fetchNearPlants(location: CLLocation) {
+    private func fetchNearPlantsOnInternal() {
         Task {
-            let result = try await PlantLoader.shared.fetchAllPlants()
+            await fetchNearPlants()
+        }
+    }
+    
+    func fetchNearPlants() async {
+        guard let detailLocationStr, !onFetch else { return }
+        onFetch = true
+        do {
+            let result = try await PlantLoader.shared.fetchLocalPlants(locale: detailLocationStr)
             self.plants = result
             self.recommendedPlant = result.first
-        }
+        } catch {}
+        onFetch = false
     }
 }

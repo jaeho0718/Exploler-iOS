@@ -36,6 +36,17 @@ class PlantLoader {
         return models
     }
     
+    func fetchLocalPlants(locale: String) async throws -> [PlantModel] {
+        let urlComponent = getURLComponents(path: "/plant/location/\(locale)")
+        let url = urlComponent.url!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "content-type")
+        let (data, _) = try await URLSession.shared.data(for: request)
+        let models = try JSONDecoder().decode([PlantModel].self, from: data)
+        return models
+    }
+    
     func uploadPlant(plant: PlantModel) async throws -> String? {
         let urlComponent = getURLComponents(path: "/plant")
         let url = urlComponent.url!

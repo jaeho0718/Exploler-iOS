@@ -18,7 +18,11 @@ final class NetworkTests: XCTestCase {
     
     func testFetchAllPlants() async throws {
         let models = try await loader.fetchAllPlants()
-        print(models)
+        XCTAssert(models.count > 0)
+    }
+    
+    func testFetchLocalPlants() async throws {
+        let models = try await loader.fetchLocalPlants(locale: "서울특별시 흑석동")
         XCTAssert(models.count > 0)
     }
     
