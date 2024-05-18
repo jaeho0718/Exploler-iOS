@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FlexableScrollView<Header: View, Primary: View, Content: View, Current: Hashable>: View {
+struct FlexableScrollLayout<Header: View, Primary: View, Content: View, Current: Hashable>: View {
     @ViewBuilder private var header: ()->Header
     @ViewBuilder private var primary: ()->Primary
     @ViewBuilder private var content: ()->Content
