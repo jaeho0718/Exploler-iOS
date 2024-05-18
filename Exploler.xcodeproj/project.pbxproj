@@ -28,6 +28,14 @@
 		7A2ABD0F2BF8899A0054A604 /* UIImageColors in Frameworks */ = {isa = PBXBuildFile; productRef = 7A2ABD0E2BF8899A0054A604 /* UIImageColors */; };
 		7A2ABD112BF88A5B0054A604 /* PlantEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABD102BF88A5B0054A604 /* PlantEditor.swift */; };
 		7A2ABD132BF89C100054A604 /* AnalyzeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABD122BF89C100054A604 /* AnalyzeAnimation.swift */; };
+		7A82FCD92BF8AA810055EECE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FCD82BF8AA810055EECE /* Home.swift */; };
+		7A82FCDB2BF8AB380055EECE /* HomeTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FCDA2BF8AB380055EECE /* HomeTitle.swift */; };
+		7A82FCDD2BF8AD4C0055EECE /* NearPlantsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FCDC2BF8AD4C0055EECE /* NearPlantsSection.swift */; };
+		7A82FCDF2BF8AD770055EECE /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FCDE2BF8AD770055EECE /* HomeSection.swift */; };
+		7A82FCE12BF8C2210055EECE /* MyPlantsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FCE02BF8C2210055EECE /* MyPlantsSection.swift */; };
+		7A82FCE42BF8C3890055EECE /* MyPlantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FCE32BF8C3890055EECE /* MyPlantCell.swift */; };
+		7A82FCE62BF8CAA10055EECE /* NearPlantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FCE52BF8CAA10055EECE /* NearPlantCell.swift */; };
+		7A82FCE82BF8CCC40055EECE /* AddPlantButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FCE72BF8CCC40055EECE /* AddPlantButton.swift */; };
 		7AF0A27C2BF6F32A0068CB48 /* ExplolerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0A27B2BF6F32A0068CB48 /* ExplolerApp.swift */; };
 		7AF0A27E2BF6F32A0068CB48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0A27D2BF6F32A0068CB48 /* ContentView.swift */; };
 		7AF0A2802BF6F32B0068CB48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AF0A27F2BF6F32B0068CB48 /* Assets.xcassets */; };
@@ -56,6 +64,14 @@
 		7A2ABD092BF8648D0054A604 /* KeyboardDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDatePicker.swift; sourceTree = "<group>"; };
 		7A2ABD102BF88A5B0054A604 /* PlantEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantEditor.swift; sourceTree = "<group>"; };
 		7A2ABD122BF89C100054A604 /* AnalyzeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeAnimation.swift; sourceTree = "<group>"; };
+		7A82FCD82BF8AA810055EECE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		7A82FCDA2BF8AB380055EECE /* HomeTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTitle.swift; sourceTree = "<group>"; };
+		7A82FCDC2BF8AD4C0055EECE /* NearPlantsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearPlantsSection.swift; sourceTree = "<group>"; };
+		7A82FCDE2BF8AD770055EECE /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
+		7A82FCE02BF8C2210055EECE /* MyPlantsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsSection.swift; sourceTree = "<group>"; };
+		7A82FCE32BF8C3890055EECE /* MyPlantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantCell.swift; sourceTree = "<group>"; };
+		7A82FCE52BF8CAA10055EECE /* NearPlantCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearPlantCell.swift; sourceTree = "<group>"; };
+		7A82FCE72BF8CCC40055EECE /* AddPlantButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPlantButton.swift; sourceTree = "<group>"; };
 		7AF0A2782BF6F32A0068CB48 /* Exploler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exploler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF0A27B2BF6F32A0068CB48 /* ExplolerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplolerApp.swift; sourceTree = "<group>"; };
 		7AF0A27D2BF6F32A0068CB48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -149,6 +165,8 @@
 		7A2ABD032BF85F300054A604 /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				7A82FCE22BF8C3490055EECE /* Shared */,
+				7A82FCD72BF8AA7B0055EECE /* Home */,
 				7A2ABD042BF85F3B0054A604 /* PlantEditor */,
 			);
 			path = Feature;
@@ -164,6 +182,28 @@
 				7A2ABD072BF85F800054A604 /* PlantEditor+Error.swift */,
 			);
 			path = PlantEditor;
+			sourceTree = "<group>";
+		};
+		7A82FCD72BF8AA7B0055EECE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7A82FCD82BF8AA810055EECE /* Home.swift */,
+				7A82FCDA2BF8AB380055EECE /* HomeTitle.swift */,
+				7A82FCDE2BF8AD770055EECE /* HomeSection.swift */,
+				7A82FCDC2BF8AD4C0055EECE /* NearPlantsSection.swift */,
+				7A82FCE02BF8C2210055EECE /* MyPlantsSection.swift */,
+				7A82FCE72BF8CCC40055EECE /* AddPlantButton.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7A82FCE22BF8C3490055EECE /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7A82FCE32BF8C3890055EECE /* MyPlantCell.swift */,
+				7A82FCE52BF8CAA10055EECE /* NearPlantCell.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		7AF0A26F2BF6F32A0068CB48 = {
@@ -284,12 +324,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A2ABCE62BF798AB0054A604 /* FlexableScrollLayout.swift in Sources */,
+				7A82FCE62BF8CAA10055EECE /* NearPlantCell.swift in Sources */,
+				7A82FCDD2BF8AD4C0055EECE /* NearPlantsSection.swift in Sources */,
 				7A2ABD132BF89C100054A604 /* AnalyzeAnimation.swift in Sources */,
+				7A82FCD92BF8AA810055EECE /* Home.swift in Sources */,
 				7AF0A27E2BF6F32A0068CB48 /* ContentView.swift in Sources */,
+				7A82FCE12BF8C2210055EECE /* MyPlantsSection.swift in Sources */,
 				7A2ABCF52BF82F780054A604 /* ContentButtonStyle.swift in Sources */,
 				7A2ABD0A2BF8648D0054A604 /* KeyboardDatePicker.swift in Sources */,
 				7A2ABD062BF85F510054A604 /* PlantAnalyzer.swift in Sources */,
 				7A2ABCE42BF74F3F0054A604 /* FlowLayout.swift in Sources */,
+				7A82FCDB2BF8AB380055EECE /* HomeTitle.swift in Sources */,
 				7A2ABCD72BF744100054A604 /* ButtonColor.swift in Sources */,
 				7A2ABD022BF832E90054A604 /* ChipButtonStyle.swift in Sources */,
 				7A2ABCF62BF82F780054A604 /* PrimaryButtonStyle.swift in Sources */,
@@ -297,8 +342,11 @@
 				7A2ABD112BF88A5B0054A604 /* PlantEditor.swift in Sources */,
 				7A2ABCDF2BF748130054A604 /* Font.swift in Sources */,
 				7A2ABCD32BF7434A0054A604 /* ChipColor.swift in Sources */,
+				7A82FCE82BF8CCC40055EECE /* AddPlantButton.swift in Sources */,
 				7A2ABCFF2BF8313E0054A604 /* ChipLayout.swift in Sources */,
+				7A82FCDF2BF8AD770055EECE /* HomeSection.swift in Sources */,
 				7AF0A27C2BF6F32A0068CB48 /* ExplolerApp.swift in Sources */,
+				7A82FCE42BF8C3890055EECE /* MyPlantCell.swift in Sources */,
 				7A2ABD082BF85F800054A604 /* PlantEditor+Error.swift in Sources */,
 				7A2ABCD12BF742CA0054A604 /* FontColor.swift in Sources */,
 				7A2ABCD52BF743E70054A604 /* ThemeColor.swift in Sources */,
