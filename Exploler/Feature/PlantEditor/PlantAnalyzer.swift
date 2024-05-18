@@ -69,7 +69,7 @@ class PlantImageAnalyzer {
             )
             
             guard let placemark = placemarks.first,
-                  let name = CLPlacemark(placemark: placemark).name
+                  let name = placemark.subLocality
             else { throw PlantAnalyzerError.loadPlantLocationFailed }
             self.locationStr = name
         } catch let err as PlantAnalyzerError {
