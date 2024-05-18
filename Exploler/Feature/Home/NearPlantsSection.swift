@@ -9,11 +9,23 @@ import SwiftUI
 import MapKit
 
 struct NearPlantsSection: View {
+    @Environment(PageViewModel.self) private var page
+    var mainSpace: Namespace.ID
+    
     var body: some View {
-        HomeSection(icon: "📍", header: "흑석동의 식물") {
+        HomeSection(
+            icon: "📍",
+            header: "흑석동의 식물",
+            moreAction: {
+                withAnimation {
+                    page.current = .nearPlants
+                }
+            }
+        ) {
             FlowLayout {
                 Map()
                     .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .matchedGeometryEffect(id: "NearPlants", in: mainSpace)
                     .layoutPriority(1.3)
                 NearPlantCell()
                     .layoutPriority(1)
@@ -25,8 +37,4 @@ struct NearPlantsSection: View {
             .frame(height: 200)
         }
     }
-}
-
-#Preview {
-    NearPlantsSection()
 }

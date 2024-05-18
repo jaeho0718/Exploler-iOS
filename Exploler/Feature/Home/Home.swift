@@ -15,7 +15,7 @@ struct Home: View {
             LazyVStack(alignment: .leading, spacing: 35) {
                 HomeTitle(total: 23)
                 
-                NearPlantsSection()
+                NearPlantsSection(mainSpace: mainSpace)
                 
                 MyPlantsSection(mainSpace: mainSpace)
             }

@@ -1,5 +1,5 @@
 //
-//  MyPlants.swift
+//  NearPlants.swift
 //  Exploler
 //
 //  Created by Lee Jaeho on 5/18/24.
@@ -8,14 +8,19 @@
 import SwiftUI
 import MapKit
 
-struct MyPlants: View {
+struct NearPlants: View {
+    var mainSpace: Namespace.ID
     @State private var current: Int?
     
     var body: some View {
         FlexableScrollLayout(scrollPosition: $current) {
-            MyPlantsHeader()
+            NearPlantsHeader()
         } primary: {
             Map()
+                .matchedGeometryEffect(
+                    id: "NearPlants",
+                    in: mainSpace
+                )
         } content: {
             ForEach(0..<20) { _ in
                 MyPlantCell()
