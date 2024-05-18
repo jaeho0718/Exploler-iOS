@@ -26,9 +26,12 @@ struct PlantEditor: View {
                                 .foregroundStyle(Color.Chip.unselected)
                             if let data = plantAnalyzer.plantImgData,
                                let uiImage = UIImage(data: data) {
-                                Image(uiImage: uiImage)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
+                                GeometryReader { proxy in
+                                    Image(uiImage: uiImage)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: proxy.size.width, height: proxy.size.height)
+                                }
                             } else {
                                 HStack {
                                     Text("🍀")

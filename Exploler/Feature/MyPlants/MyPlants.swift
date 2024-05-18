@@ -18,7 +18,7 @@ struct MyPlants: View {
             Map()
         } content: {
             ForEach(0..<20) { _ in
-                MyPlantCell()
+                PlantCell()
                     .frame(height: 75)
             }
         }
