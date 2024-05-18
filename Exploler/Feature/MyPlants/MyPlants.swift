@@ -5,20 +5,22 @@
 //  Created by Lee Jaeho on 5/18/24.
 //
 
+import SwiftData
 import SwiftUI
 import MapKit
 
 struct MyPlants: View {
-    @Environment(NearPlantsViewModel.self) private var nearPlants
+    @Query(sort: [SortDescriptor(\PlantModel.createdAt)])
+    private var userPlants: [PlantModel]
     @State private var current: Int?
     
     var body: some View {
         FlexableScrollLayout(scrollPosition: $current) {
             MyPlantsHeader()
         } primary: {
-            Map()
+            MyPlantsMap(plants: userPlants)
         } content: {
-            ForEach(nearPlants.plants) { plant in
+            ForEach(userPlants) { plant in
                 PlantCell(plant: plant)
                     .frame(height: 75)
             }

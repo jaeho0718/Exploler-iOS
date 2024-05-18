@@ -9,11 +9,12 @@ import SwiftUI
 
 struct PlantDateBlock: View {
     var date: Date
+    var color: Color
     
     var body: some View {
         ZStack(alignment: .center) {
             Rectangle()
-                .foregroundStyle(.green)
+                .foregroundStyle(color)
             HStack(spacing: 8) {
                 Text("📅")
                     .font(.tossIcon(size: 20))
@@ -28,5 +29,5 @@ struct PlantDateBlock: View {
 }
 
 #Preview {
-    PlantDateBlock(date: .now)
+    PlantDateBlock(date: .now, color: .red)
 }

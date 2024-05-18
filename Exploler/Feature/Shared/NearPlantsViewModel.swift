@@ -17,6 +17,8 @@ class NearPlantsViewModel: NSObject, CLLocationManagerDelegate {
     var location: CLLocation?
     var plants: [PlantModel] = []
     var recommendedPlant: PlantModel?
+    private var updateTime: Date?
+    private let minimumUpdateTime: TimeInterval = 60
     
     override init() {
         super.init()
@@ -35,11 +37,15 @@ class NearPlantsViewModel: NSObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
+        if let updateTime, Date.now.timeIntervalSince(updateTime) < minimumUpdateTime {
+            return
+        }
         DispatchQueue.main.async { [weak self] in
             self?.location = location
         }
         loadLocationStr(location: location)
         fetchNearPlants(location: location)
+        updateTime = Date.now
     }
     
     private func loadLocationStr(location: CLLocation) {

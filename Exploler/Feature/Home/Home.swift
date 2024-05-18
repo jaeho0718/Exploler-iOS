@@ -6,16 +6,18 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct Home: View {
     @Environment(NearPlantsViewModel.self) private var nearPlants
-    
+    @Query(sort: [SortDescriptor(\PlantModel.createdAt)])
+    private var userPlants: [PlantModel]
     var mainSpace: Namespace.ID
     
     var body: some View {
         ScrollView(.vertical) {
             LazyVStack(alignment: .leading, spacing: 35) {
-                HomeTitle(total: 23)
+                HomeTitle(total: userPlants.count)
                     .scrollTransition { content, phase in
                         content
                             .opacity(phase.isIdentity ? 1 : 0)
@@ -38,7 +40,7 @@ struct Home: View {
                             .blur(radius: phase.isIdentity ? 0 : 7)
                     }
                 
-                MyPlantsSection(mainSpace: mainSpace)
+                MyPlantsSection(mainSpace: mainSpace, plants: userPlants)
                     .scrollTransition { content, phase in
                         content
                             .opacity(phase.isIdentity ? 1 : 0)

@@ -30,6 +30,9 @@
 		7A2ABD132BF89C100054A604 /* AnalyzeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABD122BF89C100054A604 /* AnalyzeAnimation.swift */; };
 		7A3499D72BF9126400D941FE /* NearPlantsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3499D62BF9126400D941FE /* NearPlantsMap.swift */; };
 		7A3499D92BF9181600D941FE /* EmptyNearPlants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3499D82BF9181600D941FE /* EmptyNearPlants.swift */; };
+		7A3499E12BF9258600D941FE /* EmptyMyPlants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3499E02BF9258600D941FE /* EmptyMyPlants.swift */; };
+		7A526F652BF92C5C002656FB /* PlantImagePlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A526F642BF92C5C002656FB /* PlantImagePlaceholder.swift */; };
+		7A526F672BF92EC6002656FB /* MyPlantsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A526F662BF92EC6002656FB /* MyPlantsMap.swift */; };
 		7A82FCD92BF8AA810055EECE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FCD82BF8AA810055EECE /* Home.swift */; };
 		7A82FCDB2BF8AB380055EECE /* HomeTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FCDA2BF8AB380055EECE /* HomeTitle.swift */; };
 		7A82FCDD2BF8AD4C0055EECE /* NearPlantsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82FCDC2BF8AD4C0055EECE /* NearPlantsSection.swift */; };
@@ -96,6 +99,9 @@
 		7A2ABD122BF89C100054A604 /* AnalyzeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeAnimation.swift; sourceTree = "<group>"; };
 		7A3499D62BF9126400D941FE /* NearPlantsMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearPlantsMap.swift; sourceTree = "<group>"; };
 		7A3499D82BF9181600D941FE /* EmptyNearPlants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyNearPlants.swift; sourceTree = "<group>"; };
+		7A3499E02BF9258600D941FE /* EmptyMyPlants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyMyPlants.swift; sourceTree = "<group>"; };
+		7A526F642BF92C5C002656FB /* PlantImagePlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantImagePlaceholder.swift; sourceTree = "<group>"; };
+		7A526F662BF92EC6002656FB /* MyPlantsMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPlantsMap.swift; sourceTree = "<group>"; };
 		7A82FCD82BF8AA810055EECE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		7A82FCDA2BF8AB380055EECE /* HomeTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTitle.swift; sourceTree = "<group>"; };
 		7A82FCDC2BF8AD4C0055EECE /* NearPlantsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearPlantsSection.swift; sourceTree = "<group>"; };
@@ -269,6 +275,7 @@
 				7A82FCEE2BF8D4CC0055EECE /* PageViewModel.swift */,
 				7A82FCF52BF8DD450055EECE /* SheetViewModel.swift */,
 				7A3499D82BF9181600D941FE /* EmptyNearPlants.swift */,
+				7A3499E02BF9258600D941FE /* EmptyMyPlants.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -278,6 +285,7 @@
 			children = (
 				7A82FCEA2BF8CF340055EECE /* MyPlants.swift */,
 				7A82FCEC2BF8D02F0055EECE /* MyPlantsHeader.swift */,
+				7A526F662BF92EC6002656FB /* MyPlantsMap.swift */,
 			);
 			path = MyPlants;
 			sourceTree = "<group>";
@@ -295,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				7A82FCFA2BF8E1A50055EECE /* PlantDetail.swift */,
+				7A526F642BF92C5C002656FB /* PlantImagePlaceholder.swift */,
 				7A82FD022BF8E4D10055EECE /* PlantImageBlock.swift */,
 				7A82FD002BF8E4820055EECE /* PlantDateBlock.swift */,
 				7A82FCFE2BF8E3E80055EECE /* PlantLocationBlock.swift */,
@@ -506,13 +515,16 @@
 				7A82FCFF2BF8E3E80055EECE /* PlantLocationBlock.swift in Sources */,
 				7A82FD0B2BF8F56A0055EECE /* PlantModel.swift in Sources */,
 				7AF0A27E2BF6F32A0068CB48 /* ContentView.swift in Sources */,
+				7A3499E12BF9258600D941FE /* EmptyMyPlants.swift in Sources */,
 				7A82FCE12BF8C2210055EECE /* MyPlantsSection.swift in Sources */,
 				7A2ABCF52BF82F780054A604 /* ContentButtonStyle.swift in Sources */,
 				7A2ABD0A2BF8648D0054A604 /* KeyboardDatePicker.swift in Sources */,
 				7A2ABD062BF85F510054A604 /* PlantAnalyzer.swift in Sources */,
 				7A2ABCE42BF74F3F0054A604 /* FlowLayout.swift in Sources */,
 				7A82FCF22BF8DB180055EECE /* NearPlants.swift in Sources */,
+				7A526F652BF92C5C002656FB /* PlantImagePlaceholder.swift in Sources */,
 				7A82FCED2BF8D02F0055EECE /* MyPlantsHeader.swift in Sources */,
+				7A526F672BF92EC6002656FB /* MyPlantsMap.swift in Sources */,
 				7A82FCDB2BF8AB380055EECE /* HomeTitle.swift in Sources */,
 				7A2ABCD72BF744100054A604 /* ButtonColor.swift in Sources */,
 				7A2ABD022BF832E90054A604 /* ChipButtonStyle.swift in Sources */,

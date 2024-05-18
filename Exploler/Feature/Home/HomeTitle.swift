@@ -21,6 +21,8 @@ struct HomeTitle: View {
             }
             HStack(spacing: 1) {
                 Text(String(total))
+                    .contentTransition(.numericText())
+                    .animation(.easeInOut, value: total)
                 Text("건")
             }
             .font(.Pretendard.largeTitle)
