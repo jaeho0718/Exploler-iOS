@@ -21,4 +21,11 @@ final class NetworkTests: XCTestCase {
         print(models)
         XCTAssert(models.count > 0)
     }
+    
+    func testPlantRecognition() async throws {
+        let uiImage = UIImage(resource: .flowerSample)
+        let data = uiImage.jpegData(compressionQuality: 0.7)!
+        let result = try await loader.checkIsPlant(data: data)
+        XCTAssert(result.isPlant)
+    }
 }

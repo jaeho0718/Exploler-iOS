@@ -30,6 +30,10 @@ class PlantImageAnalyzer {
         try loadImageColors()
     }
     
+    func checkIsPlant() async throws {
+        guard let data = plantImgData else { throw PlantAnalyzerError.loadPlantPhotoFailed }
+    }
+    
     private func loadImageData() async throws {
         guard let item = selectedPhoto else { throw PlantAnalyzerError.loadPlantPhotoFailed }
         do {
