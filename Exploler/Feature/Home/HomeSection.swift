@@ -9,13 +9,13 @@ import SwiftUI
 
 struct HomeSection<Content: View>: View {
     private var icon: String
-    private var header: LocalizedStringResource
+    private var header: String
     @ViewBuilder private var content: ()->Content
     private var moreAction: (()->Void)?
     
     init(
         icon: String,
-        header: LocalizedStringResource,
+        header: String,
         moreAction: (()->Void)? = nil,
         content: @escaping () -> Content
     ) {

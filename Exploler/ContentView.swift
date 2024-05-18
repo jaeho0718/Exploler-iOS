@@ -11,6 +11,7 @@ struct ContentView: View {
     @Namespace private var mainSpace
     @State private var page = PageViewModel()
     @State private var sheet = SheetViewModel()
+    @State private var nearPlants = NearPlantsViewModel()
     
     var body: some View {
         ZStack {
@@ -44,6 +45,13 @@ struct ContentView: View {
         }
         .environment(page)
         .environment(sheet)
+        .environment(nearPlants)
+        .onAppear {
+            nearPlants.startUpdatingLocation()
+        }
+        .onDisappear {
+            nearPlants.stopUpdatingLocation()
+        }
     }
 }
 

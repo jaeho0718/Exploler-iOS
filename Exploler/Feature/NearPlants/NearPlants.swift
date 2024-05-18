@@ -9,14 +9,16 @@ import SwiftUI
 import MapKit
 
 struct NearPlants: View {
+    @Environment(NearPlantsViewModel.self) private var nearPlants
+    
     var mainSpace: Namespace.ID
     @State private var current: Int?
     
     var body: some View {
         FlexableScrollLayout(scrollPosition: $current) {
-            NearPlantsHeader()
+            NearPlantsHeader(location: nearPlants.detailLocationStr ?? "위치 불러오는 중")
         } primary: {
-            Map()
+            NearPlantsMap(interactiveMode: .all)
                 .matchedGeometryEffect(
                     id: "NearPlants",
                     in: mainSpace

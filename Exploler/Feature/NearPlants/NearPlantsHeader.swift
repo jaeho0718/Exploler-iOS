@@ -9,13 +9,14 @@ import SwiftUI
 
 struct NearPlantsHeader: View {
     @Environment(PageViewModel.self) private var page
+    var location: String
     
     var body: some View {
         HStack {
             HStack(spacing: 5) {
                 Text("📌")
                     .font(.tossIcon(size: 24))
-                Text("서울시 흑석동")
+                Text(location)
                     .font(.Pretendard.title)
             }
             .foregroundStyle(Color.Font.title)
@@ -35,5 +36,5 @@ struct NearPlantsHeader: View {
 }
 
 #Preview {
-    NearPlantsHeader()
+    NearPlantsHeader(location: "서울시 흑석동")
 }
