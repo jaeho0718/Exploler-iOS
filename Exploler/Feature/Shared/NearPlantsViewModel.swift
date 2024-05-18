@@ -79,7 +79,7 @@ class NearPlantsViewModel: NSObject, CLLocationManagerDelegate {
         do {
             let result = try await PlantLoader.shared.fetchLocalPlants(locale: detailLocationStr)
             self.plants = result
-            self.recommendedPlant = result.first
+            self.recommendedPlant = result.randomElement()
         } catch {}
         onFetch = false
     }
