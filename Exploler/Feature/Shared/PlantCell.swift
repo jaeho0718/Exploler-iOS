@@ -45,7 +45,7 @@ struct PlantCell: View {
             if let data = plant.imageData,
                let uiImage = UIImage(data: data) {
                 Image(uiImage: uiImage)
-                    .resizable(resizingMode: .stretch)
+                    .resizable()
                     .aspectRatio(contentMode: .fill)
             } else if let urlStr = plant.imageURL,
                       let url = URL(string: urlStr) {
@@ -62,7 +62,8 @@ struct PlantCell: View {
                 ZStack(alignment: .bottomLeading) {
                     GeometryReader { proxy in
                         plantImage
-                            .frame(width: proxy.size.width, height: proxy.size.height)
+                            .frame(width: proxy.size.width, height: 200)
+                            .contentShape(Rectangle())
                             .clipped()
                     }
                     Rectangle()
@@ -72,6 +73,7 @@ struct PlantCell: View {
                         .padding()
                 }
                 .frame(height: 200)
+                .clipped()
                 HStack {
                     if showImage {
                         plantImage

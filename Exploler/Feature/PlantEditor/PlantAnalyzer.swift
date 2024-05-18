@@ -38,7 +38,6 @@ class PlantImageAnalyzer {
               let compressedData = resizedImage.jpegData(compressionQuality: 0.7)
         else { throw PlantAnalyzerError.loadPlantPhotoFailed }
         let result = try await PlantLoader.shared.checkIsPlant(data: compressedData)
-        print(result)
         DispatchQueue.main.async { [weak self] in
             self?.plantInfo = result
         }
@@ -93,9 +92,10 @@ class PlantImageAnalyzer {
             )
             
             guard let placemark = placemarks.first,
-                  let name = placemark.subLocality
+                  let local = placemark.locality,
+                  let subLocal = placemark.subLocality
             else { throw PlantAnalyzerError.loadPlantLocationFailed }
-            self.locationStr = name
+            self.locationStr = "\(local) \(subLocal)"
         } catch let err as PlantAnalyzerError {
             throw err
         } catch {

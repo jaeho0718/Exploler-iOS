@@ -39,7 +39,7 @@ struct ContentView: View {
                     .presentationCornerRadius(15)
             case .plantEditor:
                 PlantEditor()
-                    .presentationDetents([.fraction(0.7)])
+                    .presentationDetents([.medium])
                     .presentationCornerRadius(15)
             }
         }

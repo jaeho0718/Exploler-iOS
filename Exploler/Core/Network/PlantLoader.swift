@@ -35,11 +35,18 @@ class PlantLoader {
         let models = try JSONDecoder().decode([PlantModel].self, from: data)
         return models
     }
-    /*
-    func fetchPlantByID(plantID: String) async throws -> PlantModel {
-        
+    
+    func uploadPlant(plant: PlantModel) async throws -> String? {
+        let urlComponent = getURLComponents(path: "/plant")
+        let url = urlComponent.url!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "content-type")
+        request.httpBody = try JSONEncoder().encode(plant)
+        let (data, _) = try await URLSession.shared.data(for: request)
+        let result = try JSONSerialization.jsonObject(with: data) as? [String: Any]
+        return result?["id"] as? String
     }
-     */
     
     func checkIsPlant(data: Data) async throws -> PlantRecognizeResult {
         let urlComponent = getURLComponents(path: "/plant/upload")
@@ -58,8 +65,6 @@ class PlantLoader {
         )
         request.httpBody = body
         let (responseData, statusz) = try await URLSession.shared.data(for: request)
-        print(statusz)
-        print(String(data: responseData, encoding: .utf8))
         let result = try JSONDecoder().decode(PlantRecognizeResult.self, from: responseData)
         return result
     }

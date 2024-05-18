@@ -9,9 +9,12 @@ import SwiftUI
 import PhotosUI
 
 struct PlantEditor: View {
+    @Environment(SheetViewModel.self) private var sheet
+    @Environment(\.modelContext) private var modelContext
     @State private var plantAnalyzer = PlantImageAnalyzer()
     @State private var onAnalyze = false
-    @State private var error: PlantAnalyzerError?
+    @State private var onSaving = false
+    @State private var isError = false
     @State private var title: String = ""
     @State private var locationStr: String = ""
     
@@ -44,7 +47,7 @@ struct PlantEditor: View {
                                 Rectangle()
                                     .foregroundStyle(.ultraThinMaterial)
                                 AnalyzeAnimation()
-                            } else if error != nil {
+                            } else if isError {
                                 ChipLayout(color: .red) {
                                     Text("이미지를 분석하는데 실패했어요.")
                                 }
@@ -63,9 +66,9 @@ struct PlantEditor: View {
                     Text(title)
                         .font(.Pretendard.body)
                         .accentTextFieldStyle(
-                            color: Color(uiColor: plantAnalyzer.colors?.primary ?? .unselected)
+                            color: Color(uiColor: plantAnalyzer.colors?.background ?? .unselected)
                         )
-                        .animation(.easeInOut, value: plantAnalyzer.colors?.primary)
+                        .animation(.easeInOut, value: plantAnalyzer.colors?.background)
                     
                     Text(plantAnalyzer.locationStr.isEmpty ? 
                          "📍위치정보를 찾을 수 없습니다."
@@ -81,35 +84,66 @@ struct PlantEditor: View {
             .contentMargins(.horizontal, 16, for: .scrollContent)
             .contentMargins(.top, 10, for: .scrollContent)
             HStack {
-                Button(action: {}) {
+                Button(action: { sheet.current = nil }) {
                     Text("취소")
                 }
                 .buttonStyle(PrimaryButtonStyle(color: .Button.cancel))
-                Button(action: {}) {
+                .disabled(onAnalyze || onSaving)
+                Button(action: save) {
                     Text("저장")
                 }
                 .buttonStyle(PrimaryButtonStyle(color: .Button.save))
-                .disabled(!(plantAnalyzer.plantInfo?.isPlant ?? false))
+                .disabled(!(plantAnalyzer.plantInfo?.isPlant ?? false) || onAnalyze || onSaving)
             }
             .padding(EdgeInsets(top: 5, leading: 17, bottom: 5, trailing: 17))
         }
         .ignoresSafeArea(.keyboard)
-        .interactiveDismissDisabled(onAnalyze)
+        .overlay {
+            if onSaving {
+                ProgressView()
+                    .progressViewStyle(.circular)
+            }
+        }
+        .interactiveDismissDisabled(onAnalyze || onSaving)
         .onChange(of: plantAnalyzer.selectedPhoto) { _, _ in
             Task {
                 onAnalyze = true
                 do {
                     try await plantAnalyzer.analyzePlant()
                     title = plantAnalyzer.plantInfo?.name ?? ""
-                } catch let err as PlantAnalyzerError {
-                    error = err
-                    print(err)
-                } catch let err {
-                    print(err)
+                } catch {
+                    isError = true
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
                     onAnalyze = false
                 }
+            }
+        }
+    }
+    
+    private func save() {
+        guard let info = plantAnalyzer.plantInfo,
+              let location = plantAnalyzer.location else { return }
+        Task {
+            onSaving = true
+            let temp = PlantModel(
+                name: info.name,
+                infomation: "",
+                location: .init(
+                    latitude: location.coordinate.latitude,
+                    longitude: location.coordinate.longitude
+                ),
+                locationStr: plantAnalyzer.locationStr,
+                imageURL: info.imageUrl
+            )
+            if let plantID = try? await PlantLoader.shared.uploadPlant(plant: temp) {
+                temp.plantID = plantID
+                temp.imageData = plantAnalyzer.plantImgData
+                modelContext.insert(temp)
+                onSaving = false
+                sheet.current = nil
+            } else {
+                onSaving = false
             }
         }
     }
