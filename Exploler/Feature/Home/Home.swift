@@ -20,6 +20,13 @@ struct Home: View {
                             .blur(radius: phase.isIdentity ? 0 : 7)
                     }
                 
+                RecommendCell(flowerName: "개나리")
+                    .scrollTransition { content, phase in
+                        content
+                            .opacity(phase.isIdentity ? 1 : 0)
+                            .blur(radius: phase.isIdentity ? 0 : 7)
+                    }
+                
                 NearPlantsSection(mainSpace: mainSpace)
                     .scrollTransition { content, phase in
                         content
