@@ -19,7 +19,8 @@ fileprivate struct AccentTextFieldStyleModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .foregroundStyle(Color.Font.overlay)
-            .frame(minWidth: .infinity, maxHeight: 55)
+            .padding(EdgeInsets(top: 2, leading: 10, bottom: 2, trailing: 10))
+            .frame(maxWidth: .infinity, minHeight: 55, alignment: .leading)
             .background(
                 color,
                 in: RoundedRectangle(cornerRadius: 10)

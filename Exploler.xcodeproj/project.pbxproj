@@ -22,6 +22,12 @@
 		7A2ABCFD2BF830E20054A604 /* AccentTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABCFC2BF830E20054A604 /* AccentTextFieldStyle.swift */; };
 		7A2ABCFF2BF8313E0054A604 /* ChipLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABCFE2BF8313E0054A604 /* ChipLayout.swift */; };
 		7A2ABD022BF832E90054A604 /* ChipButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABD012BF832E90054A604 /* ChipButtonStyle.swift */; };
+		7A2ABD062BF85F510054A604 /* PlantAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABD052BF85F510054A604 /* PlantAnalyzer.swift */; };
+		7A2ABD082BF85F800054A604 /* PlantEditor+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABD072BF85F800054A604 /* PlantEditor+Error.swift */; };
+		7A2ABD0A2BF8648D0054A604 /* KeyboardDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABD092BF8648D0054A604 /* KeyboardDatePicker.swift */; };
+		7A2ABD0F2BF8899A0054A604 /* UIImageColors in Frameworks */ = {isa = PBXBuildFile; productRef = 7A2ABD0E2BF8899A0054A604 /* UIImageColors */; };
+		7A2ABD112BF88A5B0054A604 /* PlantEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABD102BF88A5B0054A604 /* PlantEditor.swift */; };
+		7A2ABD132BF89C100054A604 /* AnalyzeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABD122BF89C100054A604 /* AnalyzeAnimation.swift */; };
 		7AF0A27C2BF6F32A0068CB48 /* ExplolerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0A27B2BF6F32A0068CB48 /* ExplolerApp.swift */; };
 		7AF0A27E2BF6F32A0068CB48 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF0A27D2BF6F32A0068CB48 /* ContentView.swift */; };
 		7AF0A2802BF6F32B0068CB48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AF0A27F2BF6F32B0068CB48 /* Assets.xcassets */; };
@@ -45,6 +51,11 @@
 		7A2ABCFC2BF830E20054A604 /* AccentTextFieldStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccentTextFieldStyle.swift; path = Exploler/Component/Style/TextFeildStyle/AccentTextFieldStyle.swift; sourceTree = SOURCE_ROOT; };
 		7A2ABCFE2BF8313E0054A604 /* ChipLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChipLayout.swift; path = Exploler/Component/Layout/ChipLayout.swift; sourceTree = SOURCE_ROOT; };
 		7A2ABD012BF832E90054A604 /* ChipButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChipButtonStyle.swift; path = "Exploler/Component/ㄴ쇼ㅣㄷ/ButtonStyle/ChipButtonStyle.swift"; sourceTree = SOURCE_ROOT; };
+		7A2ABD052BF85F510054A604 /* PlantAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantAnalyzer.swift; sourceTree = "<group>"; };
+		7A2ABD072BF85F800054A604 /* PlantEditor+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlantEditor+Error.swift"; sourceTree = "<group>"; };
+		7A2ABD092BF8648D0054A604 /* KeyboardDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDatePicker.swift; sourceTree = "<group>"; };
+		7A2ABD102BF88A5B0054A604 /* PlantEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantEditor.swift; sourceTree = "<group>"; };
+		7A2ABD122BF89C100054A604 /* AnalyzeAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzeAnimation.swift; sourceTree = "<group>"; };
 		7AF0A2782BF6F32A0068CB48 /* Exploler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exploler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF0A27B2BF6F32A0068CB48 /* ExplolerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplolerApp.swift; sourceTree = "<group>"; };
 		7AF0A27D2BF6F32A0068CB48 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A2ABD0F2BF8899A0054A604 /* UIImageColors in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +146,26 @@
 			path = TextFeildStyle;
 			sourceTree = "<group>";
 		};
+		7A2ABD032BF85F300054A604 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				7A2ABD042BF85F3B0054A604 /* PlantEditor */,
+			);
+			path = Feature;
+			sourceTree = "<group>";
+		};
+		7A2ABD042BF85F3B0054A604 /* PlantEditor */ = {
+			isa = PBXGroup;
+			children = (
+				7A2ABD052BF85F510054A604 /* PlantAnalyzer.swift */,
+				7A2ABD122BF89C100054A604 /* AnalyzeAnimation.swift */,
+				7A2ABD092BF8648D0054A604 /* KeyboardDatePicker.swift */,
+				7A2ABD102BF88A5B0054A604 /* PlantEditor.swift */,
+				7A2ABD072BF85F800054A604 /* PlantEditor+Error.swift */,
+			);
+			path = PlantEditor;
+			sourceTree = "<group>";
+		};
 		7AF0A26F2BF6F32A0068CB48 = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +187,7 @@
 			children = (
 				7A2ABCDD2BF747F70054A604 /* Info.plist */,
 				7A2ABCCE2BF742A30054A604 /* Component */,
+				7A2ABD032BF85F300054A604 /* Feature */,
 				7AF0A27B2BF6F32A0068CB48 /* ExplolerApp.swift */,
 				7AF0A27D2BF6F32A0068CB48 /* ContentView.swift */,
 				7AF0A27F2BF6F32B0068CB48 /* Assets.xcassets */,
@@ -187,6 +220,9 @@
 			dependencies = (
 			);
 			name = Exploler;
+			packageProductDependencies = (
+				7A2ABD0E2BF8899A0054A604 /* UIImageColors */,
+			);
 			productName = Exploler;
 			productReference = 7AF0A2782BF6F32A0068CB48 /* Exploler.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +251,9 @@
 				Base,
 			);
 			mainGroup = 7AF0A26F2BF6F32A0068CB48;
+			packageReferences = (
+				7A2ABD0D2BF8899A0054A604 /* XCRemoteSwiftPackageReference "UIImageColors" */,
+			);
 			productRefGroup = 7AF0A2792BF6F32A0068CB48 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -245,17 +284,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A2ABCE62BF798AB0054A604 /* FlexableScrollLayout.swift in Sources */,
+				7A2ABD132BF89C100054A604 /* AnalyzeAnimation.swift in Sources */,
 				7AF0A27E2BF6F32A0068CB48 /* ContentView.swift in Sources */,
 				7A2ABCF52BF82F780054A604 /* ContentButtonStyle.swift in Sources */,
+				7A2ABD0A2BF8648D0054A604 /* KeyboardDatePicker.swift in Sources */,
+				7A2ABD062BF85F510054A604 /* PlantAnalyzer.swift in Sources */,
 				7A2ABCE42BF74F3F0054A604 /* FlowLayout.swift in Sources */,
 				7A2ABCD72BF744100054A604 /* ButtonColor.swift in Sources */,
 				7A2ABD022BF832E90054A604 /* ChipButtonStyle.swift in Sources */,
 				7A2ABCF62BF82F780054A604 /* PrimaryButtonStyle.swift in Sources */,
 				7A2ABCFD2BF830E20054A604 /* AccentTextFieldStyle.swift in Sources */,
+				7A2ABD112BF88A5B0054A604 /* PlantEditor.swift in Sources */,
 				7A2ABCDF2BF748130054A604 /* Font.swift in Sources */,
 				7A2ABCD32BF7434A0054A604 /* ChipColor.swift in Sources */,
 				7A2ABCFF2BF8313E0054A604 /* ChipLayout.swift in Sources */,
 				7AF0A27C2BF6F32A0068CB48 /* ExplolerApp.swift in Sources */,
+				7A2ABD082BF85F800054A604 /* PlantEditor+Error.swift in Sources */,
 				7A2ABCD12BF742CA0054A604 /* FontColor.swift in Sources */,
 				7A2ABCD52BF743E70054A604 /* ThemeColor.swift in Sources */,
 			);
@@ -465,6 +509,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7A2ABD0D2BF8899A0054A604 /* XCRemoteSwiftPackageReference "UIImageColors" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jathu/UIImageColors";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7A2ABD0E2BF8899A0054A604 /* UIImageColors */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A2ABD0D2BF8899A0054A604 /* XCRemoteSwiftPackageReference "UIImageColors" */;
+			productName = UIImageColors;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7AF0A2702BF6F32A0068CB48 /* Project object */;
 }
