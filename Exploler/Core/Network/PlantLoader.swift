@@ -12,8 +12,8 @@ class PlantLoader {
         var urlComponent = URLComponents()
         urlComponent.scheme = "http"
         urlComponent.host = "43.201.107.162"
+        urlComponent.path = path
         urlComponent.port = 8080
-        
         return urlComponent
     }
     

@@ -90,9 +90,9 @@ class PlantModel: Codable {
 }
 
 fileprivate extension DateFormatter {
-    static var serverTimeFormat: ISO8601DateFormatter = {
-        let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+    static var serverTimeFormat: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return formatter
     }()
 }
