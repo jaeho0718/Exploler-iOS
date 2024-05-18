@@ -14,13 +14,29 @@ struct Home: View {
         ScrollView(.vertical) {
             LazyVStack(alignment: .leading, spacing: 35) {
                 HomeTitle(total: 23)
+                    .scrollTransition { content, phase in
+                        content
+                            .opacity(phase.isIdentity ? 1 : 0)
+                            .blur(radius: phase.isIdentity ? 0 : 7)
+                    }
                 
                 NearPlantsSection(mainSpace: mainSpace)
+                    .scrollTransition { content, phase in
+                        content
+                            .opacity(phase.isIdentity ? 1 : 0)
+                            .blur(radius: phase.isIdentity ? 0 : 7)
+                    }
                 
                 MyPlantsSection(mainSpace: mainSpace)
+                    .scrollTransition { content, phase in
+                        content
+                            .opacity(phase.isIdentity ? 1 : 0)
+                            .blur(radius: phase.isIdentity ? 0 : 7)
+                    }
             }
         }
         .contentMargins(.horizontal, 18, for: .scrollContent)
+        .contentMargins(.top, 15, for: .scrollContent)
         .background(Color.Theme.surface)
         .safeAreaInset(edge: .bottom) {
             AddPlantButton()
