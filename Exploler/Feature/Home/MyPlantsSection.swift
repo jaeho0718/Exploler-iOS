@@ -10,6 +10,7 @@ import SwiftUI
 struct MyPlantsSection: View {
     @Environment(PageViewModel.self) private var page
     var mainSpace: Namespace.ID
+    var plants: [PlantModel]
     
     var body: some View {
         HomeSection(
@@ -22,14 +23,14 @@ struct MyPlantsSection: View {
             }
         ) {
             FlowLayout(primary: .trailing) {
-                PlantCell()
-                    .layoutPriority(1)
-                PlantCell()
-                    .layoutPriority(1)
-                PlantCell()
-                    .layoutPriority(1)
-                PlantCell()
-                    .layoutPriority(0.8)
+                if plants.isEmpty {
+                    EmptyMyPlants()
+                } else {
+                    ForEach(plants.prefix(4)) { plant in
+                        PlantCell(plant: plant)
+                            .layoutPriority(1)
+                    }
+                }
             }
             .frame(height: 200)
         }

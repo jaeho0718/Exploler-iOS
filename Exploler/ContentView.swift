@@ -11,6 +11,7 @@ struct ContentView: View {
     @Namespace private var mainSpace
     @State private var page = PageViewModel()
     @State private var sheet = SheetViewModel()
+    @State private var nearPlants = NearPlantsViewModel()
     
     var body: some View {
         ZStack {
@@ -31,19 +32,26 @@ struct ContentView: View {
         }
         .sheet(item: $sheet.current) { current in
             switch current {
-            case .plantDetail(let id):
-               PlantDetail()
+            case .plantDetail(let plant):
+               PlantDetail(plant: plant)
                     .presentationDetents([.height(400)])
                     .presentationDragIndicator(.visible)
                     .presentationCornerRadius(15)
             case .plantEditor:
                 PlantEditor()
-                    .presentationDetents([.fraction(0.7)])
+                    .presentationDetents([.medium])
                     .presentationCornerRadius(15)
             }
         }
         .environment(page)
         .environment(sheet)
+        .environment(nearPlants)
+        .onAppear {
+            nearPlants.startUpdatingLocation()
+        }
+        .onDisappear {
+            nearPlants.stopUpdatingLocation()
+        }
     }
 }
 

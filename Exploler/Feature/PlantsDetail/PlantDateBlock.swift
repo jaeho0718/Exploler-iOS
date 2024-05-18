@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct PlantDateBlock: View {
+    var date: Date
+    var color: Color
+    
     var body: some View {
         ZStack(alignment: .center) {
             Rectangle()
-                .foregroundStyle(.green)
+                .foregroundStyle(color)
             HStack(spacing: 8) {
                 Text("📅")
                     .font(.tossIcon(size: 20))
-                Text("2023.04.12")
+                Text(date, style: .date)
                     .font(.Pretendard.body)
             }
             .foregroundStyle(Color.Font.overlay)
@@ -26,5 +29,5 @@ struct PlantDateBlock: View {
 }
 
 #Preview {
-    PlantDateBlock()
+    PlantDateBlock(date: .now, color: .red)
 }

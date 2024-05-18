@@ -85,14 +85,14 @@ class PlantModel: Codable {
         try container.encode(locationStr, forKey: .location)
         try container.encode(String(location.latitude), forKey: .latitude)
         try container.encode(String(location.longitude), forKey: .longitude)
-        // 이미지 처리하기
+        try container.encode(imageURL ?? "", forKey: .imageUrl)
     }
 }
 
 fileprivate extension DateFormatter {
-    static var serverTimeFormat: ISO8601DateFormatter = {
-        let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+    static var serverTimeFormat: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return formatter
     }()
 }
