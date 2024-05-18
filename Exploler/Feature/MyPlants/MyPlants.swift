@@ -9,6 +9,7 @@ import SwiftUI
 import MapKit
 
 struct MyPlants: View {
+    @Environment(NearPlantsViewModel.self) private var nearPlants
     @State private var current: Int?
     
     var body: some View {
@@ -17,8 +18,8 @@ struct MyPlants: View {
         } primary: {
             Map()
         } content: {
-            ForEach(0..<20) { _ in
-                PlantCell()
+            ForEach(nearPlants.plants) { plant in
+                PlantCell(plant: plant)
                     .frame(height: 75)
             }
         }

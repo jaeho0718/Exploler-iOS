@@ -8,6 +8,8 @@
 import Foundation
 
 class PlantLoader {
+    static let shared = PlantLoader()
+    
     private func getURLComponents(path: String) -> URLComponents {
         var urlComponent = URLComponents()
         urlComponent.scheme = "http"

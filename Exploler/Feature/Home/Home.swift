@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Home: View {
+    @Environment(NearPlantsViewModel.self) private var nearPlants
+    
     var mainSpace: Namespace.ID
     
     var body: some View {
@@ -20,12 +22,14 @@ struct Home: View {
                             .blur(radius: phase.isIdentity ? 0 : 7)
                     }
                 
-                RecommendCell(flowerName: "개나리")
-                    .scrollTransition { content, phase in
-                        content
-                            .opacity(phase.isIdentity ? 1 : 0)
-                            .blur(radius: phase.isIdentity ? 0 : 7)
-                    }
+                if let recommend = nearPlants.recommendedPlant {
+                    RecommendCell(plant: recommend)
+                        .scrollTransition { content, phase in
+                            content
+                                .opacity(phase.isIdentity ? 1 : 0)
+                                .blur(radius: phase.isIdentity ? 0 : 7)
+                        }
+                }
                 
                 NearPlantsSection(mainSpace: mainSpace)
                     .scrollTransition { content, phase in

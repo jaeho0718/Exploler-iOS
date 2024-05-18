@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct RecommendCell: View {
-    var flowerName: String
+    var plant: PlantModel
     private var formattedTitle: AttributedString {
-        var string = AttributedString("오늘은 \(flowerName)를 찾아볼까요?")
-        guard let range = string.range(of: flowerName) else { return string }
+        var string = AttributedString("오늘은 \(plant.name)를 찾아볼까요?")
+        guard let range = string.range(of: plant.name) else { return string }
         string[range].foregroundColor = .orange
         return string
     }
@@ -25,7 +25,7 @@ struct RecommendCell: View {
                 HStack(spacing: 3) {
                     Text("📍")
                         .font(.tossIcon(size: 12))
-                    Text("서울시 흑석동")
+                    Text(plant.locationStr)
                         .font(.Pretendard.caption)
                 }
                 .foregroundStyle(Color.Font.subtitle)

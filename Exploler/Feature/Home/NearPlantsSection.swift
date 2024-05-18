@@ -35,12 +35,15 @@ struct NearPlantsSection: View {
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .matchedGeometryEffect(id: "NearPlants", in: mainSpace, isSource: true)
                     .layoutPriority(1.3)
-                NearPlantCell()
-                    .layoutPriority(1)
-                NearPlantCell()
-                    .layoutPriority(1)
-                NearPlantCell()
-                    .layoutPriority(1)
+                if nearPlants.plants.isEmpty {
+                    EmptyNearPlants(location: nearPlants.locationStr)
+                        .layoutPriority(1)
+                } else {
+                    ForEach(nearPlants.plants.prefix(3)) { plant in
+                        PlantCell(plant: plant, showImage: false)
+                            .layoutPriority(1)
+                    }
+                }
             }
             .frame(height: 200)
         }         

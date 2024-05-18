@@ -17,9 +17,9 @@ struct FlexableScrollLayout<Header: View, Primary: View, Content: View, Current:
     
     init(
         scrollPosition: Binding<Current?>,
-        header: @escaping () -> Header,
-        primary: @escaping () -> Primary,
-        content: @escaping () -> Content
+        @ViewBuilder header: @escaping () -> Header,
+        @ViewBuilder primary: @escaping () -> Primary,
+        @ViewBuilder content: @escaping () -> Content
     ) {
         self._current = scrollPosition
         self.header = header

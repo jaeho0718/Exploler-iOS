@@ -10,7 +10,6 @@ import MapKit
 
 struct NearPlants: View {
     @Environment(NearPlantsViewModel.self) private var nearPlants
-    
     var mainSpace: Namespace.ID
     @State private var current: Int?
     
@@ -24,8 +23,12 @@ struct NearPlants: View {
                     in: mainSpace
                 )
         } content: {
-            ForEach(0..<20) { _ in
-                PlantCell()
+            if nearPlants.plants.isEmpty {
+                EmptyNearPlants(location: nearPlants.locationStr)
+                    .frame(height: 150)
+            }
+            ForEach(nearPlants.plants) { plant in
+                PlantCell(plant: plant)
                     .frame(height: 75)
             }
         }

@@ -16,6 +16,7 @@ class NearPlantsViewModel: NSObject, CLLocationManagerDelegate {
     var detailLocationStr: String?
     var location: CLLocation?
     var plants: [PlantModel] = []
+    var recommendedPlant: PlantModel?
     
     override init() {
         super.init()
@@ -38,6 +39,7 @@ class NearPlantsViewModel: NSObject, CLLocationManagerDelegate {
             self?.location = location
         }
         loadLocationStr(location: location)
+        fetchNearPlants(location: location)
     }
     
     private func loadLocationStr(location: CLLocation) {
@@ -56,5 +58,13 @@ class NearPlantsViewModel: NSObject, CLLocationManagerDelegate {
                 }
             }
         )
+    }
+    
+    private func fetchNearPlants(location: CLLocation) {
+        Task {
+            let result = try await PlantLoader.shared.fetchAllPlants()
+            self.plants = result
+            self.recommendedPlant = result.first
+        }
     }
 }

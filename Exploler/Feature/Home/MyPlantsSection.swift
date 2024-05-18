@@ -22,13 +22,13 @@ struct MyPlantsSection: View {
             }
         ) {
             FlowLayout(primary: .trailing) {
-                PlantCell()
+                Rectangle()
                     .layoutPriority(1)
-                PlantCell()
+                Rectangle()
                     .layoutPriority(1)
-                PlantCell()
+                Rectangle()
                     .layoutPriority(1)
-                PlantCell()
+                Rectangle()
                     .layoutPriority(0.8)
             }
             .frame(height: 200)
