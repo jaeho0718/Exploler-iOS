@@ -37,7 +37,9 @@ class PlantImageAnalyzer {
               let resizedImage = resizeImage(image: uiImage, newWidth: 500),
               let compressedData = resizedImage.jpegData(compressionQuality: 0.7)
         else { throw PlantAnalyzerError.loadPlantPhotoFailed }
+        print("RRR")
         let result = try await PlantLoader.shared.checkIsPlant(data: compressedData)
+        print(result)
         DispatchQueue.main.async { [weak self] in
             self?.plantInfo = result
         }

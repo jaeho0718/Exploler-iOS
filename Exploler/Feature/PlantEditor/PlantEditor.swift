@@ -47,13 +47,17 @@ struct PlantEditor: View {
                                 Rectangle()
                                     .foregroundStyle(.ultraThinMaterial)
                                 AnalyzeAnimation()
+                            } else if let info = plantAnalyzer.plantInfo, !info.isPlant {
+                                ChipLayout(color: Color.Chip.unselected) {
+                                    HStack(spacing: 4) {
+                                        Text("❌")
+                                            .font(.tossIcon(size: 16))
+                                        Text("식물이 아니에요.")
+                                    }
+                                }
                             } else if isError {
                                 ChipLayout(color: .red) {
                                     Text("이미지를 분석하는데 실패했어요.")
-                                }
-                            } else if let info = plantAnalyzer.plantInfo, !info.isPlant {
-                                ChipLayout(color: Color.Button.cancel) {
-                                    Text("식물이 아니에요.")
                                 }
                             }
                         }
@@ -66,9 +70,9 @@ struct PlantEditor: View {
                     Text(title)
                         .font(.Pretendard.body)
                         .accentTextFieldStyle(
-                            color: Color(uiColor: plantAnalyzer.colors?.background ?? .unselected)
+                            color: Color(uiColor: plantAnalyzer.colors?.detail ?? .unselected)
                         )
-                        .animation(.easeInOut, value: plantAnalyzer.colors?.background)
+                        .animation(.easeInOut, value: plantAnalyzer.colors?.detail)
                     
                     Text(plantAnalyzer.locationStr.isEmpty ? 
                          "📍위치정보를 찾을 수 없습니다."
@@ -123,11 +127,12 @@ struct PlantEditor: View {
     
     private func save() {
         guard let info = plantAnalyzer.plantInfo,
+              let name = info.name,
               let location = plantAnalyzer.location else { return }
         Task {
             onSaving = true
             let temp = PlantModel(
-                name: info.name,
+                name: name,
                 infomation: "",
                 location: .init(
                     latitude: location.coordinate.latitude,

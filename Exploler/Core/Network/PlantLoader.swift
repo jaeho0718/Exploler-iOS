@@ -13,7 +13,7 @@ class PlantLoader {
     struct PlantRecognizeResult: Codable {
         var isPlant: Bool
         var imageUrl: String
-        var name: String
+        var name: String?
     }
     
     private func getURLComponents(path: String) -> URLComponents {
@@ -75,7 +75,7 @@ class PlantLoader {
             filename: "plant.jpg"
         )
         request.httpBody = body
-        let (responseData, statusz) = try await URLSession.shared.data(for: request)
+        let (responseData, _) = try await URLSession.shared.data(for: request)
         let result = try JSONDecoder().decode(PlantRecognizeResult.self, from: responseData)
         return result
     }
