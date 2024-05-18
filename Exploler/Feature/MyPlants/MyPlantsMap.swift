@@ -53,5 +53,17 @@ struct MyPlantsMap: View {
                 }
             }
         }
+        .onAppear {
+            if let firstPlant = plants.first {
+                position = .region(.init(
+                    center: .init(
+                        latitude: firstPlant.location.latitude,
+                        longitude: firstPlant.location.longitude
+                    ),
+                    latitudinalMeters: 300,
+                    longitudinalMeters: 300
+                ))
+            }
+        }
     }
 }
