@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @Namespace private var mainSpace
     @State private var page = PageViewModel()
+    @State private var sheet = SheetViewModel()
     
     var body: some View {
         ZStack {
@@ -28,7 +29,18 @@ struct ContentView: View {
                 EmptyView()
             }
         }
+        .sheet(item: $sheet.current) { current in
+            switch current {
+            case .plantDetail(let id):
+                Text(id.uuidString)
+            case .plantEditor:
+                PlantEditor()
+                    .presentationDetents([.fraction(0.7)])
+                    .presentationCornerRadius(15)
+            }
+        }
         .environment(page)
+        .environment(sheet)
     }
 }
 

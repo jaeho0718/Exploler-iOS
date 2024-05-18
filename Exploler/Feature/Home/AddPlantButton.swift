@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct AddPlantButton: View {
+    @Environment(SheetViewModel.self) private var sheet
+    
     var body: some View {
-        Button(action: {}) {
+        Button(action: { sheet.current = .plantEditor }) {
             HStack {
                 Text("📷")
                 Text("식물 추가하기")
@@ -20,6 +22,9 @@ struct AddPlantButton: View {
     }
 }
 
+#if DEBUG
 #Preview {
     AddPlantButton()
+        .environment(SheetViewModel())
 }
+#endif

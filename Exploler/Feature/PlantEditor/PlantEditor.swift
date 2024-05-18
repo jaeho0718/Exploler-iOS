@@ -76,6 +76,7 @@ struct PlantEditor: View {
                 }
             }
             .contentMargins(.horizontal, 16, for: .scrollContent)
+            .contentMargins(.top, 10, for: .scrollContent)
             HStack {
                 Button(action: {}) {
                     Text("취소")
