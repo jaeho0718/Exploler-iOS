@@ -21,17 +21,37 @@ class PlantImageAnalyzer {
     var location: CLLocation?
     var locationStr: String = ""
     var date: Date = .now
+    var plantInfo: PlantLoader.PlantRecognizeResult?
     
     func analyzePlant() async throws {
         try await loadImageData()
-        try loadDateFromData()
         try loadLocationFromData()
         try await loadLocationString()
         try loadImageColors()
+        try await checkIsPlant()
     }
     
-    func checkIsPlant() async throws {
-        guard let data = plantImgData else { throw PlantAnalyzerError.loadPlantPhotoFailed }
+    private func checkIsPlant() async throws {
+        guard let rawData = plantImgData,
+              let uiImage = UIImage(data: rawData),
+              let resizedImage = resizeImage(image: uiImage, newWidth: 500),
+              let compressedData = resizedImage.jpegData(compressionQuality: 0.7)
+        else { throw PlantAnalyzerError.loadPlantPhotoFailed }
+        let result = try await PlantLoader.shared.checkIsPlant(data: compressedData)
+        print(result)
+        DispatchQueue.main.async { [weak self] in
+            self?.plantInfo = result
+        }
+    }
+    
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage? {
+        let scale = newWidth / image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
+        image.draw(in: CGRectMake(0, 0, newWidth, newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
     }
     
     private func loadImageData() async throws {

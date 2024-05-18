@@ -19,7 +19,7 @@ class PlantLoader {
     private func getURLComponents(path: String) -> URLComponents {
         var urlComponent = URLComponents()
         urlComponent.scheme = "http"
-        urlComponent.host = "43.201.107.162"
+        urlComponent.host = "43.200.8.81"
         urlComponent.path = path
         urlComponent.port = 8080
         return urlComponent
@@ -57,7 +57,9 @@ class PlantLoader {
             filename: "plant.jpg"
         )
         request.httpBody = body
-        let (responseData, _) = try await URLSession.shared.data(for: request)
+        let (responseData, statusz) = try await URLSession.shared.data(for: request)
+        print(statusz)
+        print(String(data: responseData, encoding: .utf8))
         let result = try JSONDecoder().decode(PlantRecognizeResult.self, from: responseData)
         return result
     }

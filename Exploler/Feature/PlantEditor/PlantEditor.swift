@@ -14,7 +14,6 @@ struct PlantEditor: View {
     @State private var error: PlantAnalyzerError?
     @State private var title: String = ""
     @State private var locationStr: String = ""
-    @State private var date: Date = .now
     
     var body: some View {
         VStack {
@@ -45,6 +44,14 @@ struct PlantEditor: View {
                                 Rectangle()
                                     .foregroundStyle(.ultraThinMaterial)
                                 AnalyzeAnimation()
+                            } else if error != nil {
+                                ChipLayout(color: .red) {
+                                    Text("이미지를 분석하는데 실패했어요.")
+                                }
+                            } else if let info = plantAnalyzer.plantInfo, !info.isPlant {
+                                ChipLayout(color: Color.Button.cancel) {
+                                    Text("식물이 아니에요.")
+                                }
                             }
                         }
                         .frame(height: 250)
@@ -53,7 +60,7 @@ struct PlantEditor: View {
                     }
                     .disabled(onAnalyze)
                     
-                    TextField("식물 이름", text: $title)
+                    Text(title)
                         .font(.Pretendard.body)
                         .accentTextFieldStyle(
                             color: Color(uiColor: plantAnalyzer.colors?.primary ?? .unselected)
@@ -69,13 +76,6 @@ struct PlantEditor: View {
                             color: Color(uiColor: plantAnalyzer.colors?.secondary ?? .unselected)
                         )
                         .animation(.easeInOut, value: plantAnalyzer.colors?.secondary)
-                    
-                    KeyboardDatePicker(date: $plantAnalyzer.date)
-                        .font(.Pretendard.body)
-                        .accentTextFieldStyle(
-                            color: Color(uiColor: plantAnalyzer.colors?.detail ?? .unselected)
-                        )
-                        .animation(.easeInOut, value: plantAnalyzer.colors?.detail)
                 }
             }
             .contentMargins(.horizontal, 16, for: .scrollContent)
@@ -89,18 +89,24 @@ struct PlantEditor: View {
                     Text("저장")
                 }
                 .buttonStyle(PrimaryButtonStyle(color: .Button.save))
+                .disabled(!(plantAnalyzer.plantInfo?.isPlant ?? false))
             }
             .padding(EdgeInsets(top: 5, leading: 17, bottom: 5, trailing: 17))
         }
         .ignoresSafeArea(.keyboard)
+        .interactiveDismissDisabled(onAnalyze)
         .onChange(of: plantAnalyzer.selectedPhoto) { _, _ in
             Task {
                 onAnalyze = true
                 do {
                     try await plantAnalyzer.analyzePlant()
+                    title = plantAnalyzer.plantInfo?.name ?? ""
                 } catch let err as PlantAnalyzerError {
                     error = err
-                } catch {}
+                    print(err)
+                } catch let err {
+                    print(err)
+                }
                 DispatchQueue.main.asyncAfter(deadline: .now()+1.5) {
                     onAnalyze = false
                 }
