@@ -133,7 +133,7 @@ struct PlantEditor: View {
             onSaving = true
             let temp = PlantModel(
                 name: name,
-                infomation: "",
+                infomation: plantAnalyzer.plantInfo?.description ?? "",
                 location: .init(
                     latitude: location.coordinate.latitude,
                     longitude: location.coordinate.longitude

@@ -14,6 +14,7 @@ class PlantLoader {
         var isPlant: Bool
         var imageUrl: String
         var name: String?
+        var description: String?
     }
     
     private func getURLComponents(path: String) -> URLComponents {

@@ -13,5 +13,12 @@
 		<string>Pretendard-Bold.otf</string>
 		<string>Pretendard-SemiBold.otf</string>
 	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIImageName</key>
+		<string>LaunchLogo</string>
+		<key>UILaunchScreen</key>
+		<dict/>
+	</dict>
 </dict>
 </plist>
