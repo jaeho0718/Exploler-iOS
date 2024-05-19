@@ -70,9 +70,9 @@ struct PlantEditor: View {
                     Text(title)
                         .font(.Pretendard.body)
                         .accentTextFieldStyle(
-                            color: Color(uiColor: plantAnalyzer.colors?.primary ?? .unselected)
+                            color: Color(uiColor: plantAnalyzer.colors?.detail ?? .unselected)
                         )
-                        .animation(.easeInOut, value: plantAnalyzer.colors?.primary)
+                        .animation(.easeInOut, value: plantAnalyzer.colors?.detail)
                     
                     Text(plantAnalyzer.locationStr.isEmpty ? 
                          "📍위치정보를 찾을 수 없습니다."
