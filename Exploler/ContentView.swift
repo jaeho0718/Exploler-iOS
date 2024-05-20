@@ -8,14 +8,50 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Namespace private var mainSpace
+    @State private var page = PageViewModel()
+    @State private var sheet = SheetViewModel()
+    @State private var nearPlants = NearPlantsViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            Home(mainSpace: mainSpace)
+                .opacity(page.current != nil ? 0 : 1)
+            switch page.current {
+            case .myPlants:
+                MyPlants()
+                    .matchedGeometryEffect(
+                        id: "MyPlants",
+                        in: mainSpace
+                    )
+            case .nearPlants:
+                NearPlants(mainSpace: mainSpace)
+            case .none:
+                EmptyView()
+            }
         }
-        .padding()
+        .sheet(item: $sheet.current) { current in
+            switch current {
+            case .plantDetail(let plant):
+               PlantDetail(plant: plant)
+                    .presentationDetents([.height(400)])
+                    .presentationDragIndicator(.visible)
+                    .presentationCornerRadius(15)
+            case .plantEditor:
+                PlantEditor()
+                    .presentationDetents([.medium])
+                    .presentationCornerRadius(15)
+            }
+        }
+        .environment(page)
+        .environment(sheet)
+        .environment(nearPlants)
+        .onAppear {
+            nearPlants.startUpdatingLocation()
+        }
+        .onDisappear {
+            nearPlants.stopUpdatingLocation()
+        }
     }
 }
 
